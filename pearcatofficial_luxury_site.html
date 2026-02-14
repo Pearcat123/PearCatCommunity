@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEARCATOFFICIAL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #e0e0e0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0a0a0a, #111111);
+      color: #00bfff;
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 2px solid #00bfff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      color: #00bfff;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    header p {
+      margin: 5px 0 15px 0;
+      font-size: 1.2rem;
+      color: #c0c0c0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: rgba(25,25,25,0.95);
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+      border-left: 6px solid #00bfff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.9);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #00bfff;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    ul.rules, ul.leaderboard {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.rules li, ul.leaderboard li {
+      margin: 12px 0;
+      font-size: 1.15rem;
+    }
+
+    .discord-link, .instagram-link, .presentation-button {
+      display: inline-block;
+      margin: 12px 12px 0 0;
+      padding: 14px 28px;
+      background: linear-gradient(45deg, #00bfff, #1e90ff);
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .discord-link:hover, .instagram-link:hover, .presentation-button:hover {
+      background: linear-gradient(45deg, #1e90ff, #00bfff);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    #vancouver-clock {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #00bfff;
+    }
+
+    canvas {
+      display: block;
+      margin: 25px auto;
+      background: #111;
+      border: 3px solid #00bfff;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 1rem;
+      color: #aaa;
+      border-top: 2px solid #00bfff;
+      background: #0d0d0d;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PEARCATOFFICIAL</h1>
+    <p>Grade 8 & 9 Community • Burnaby / Vancouver</p>
+    <a href="https://www.instagram.com/tort.or517" target="_blank" class="instagram-link">Instagram: @tort.or517</a>
+    <a href="https://discord.gg/aRp7yzHEU" target="_blank" class="discord-link">Join our Discord</a>
+    <div id="vancouver-clock"></div>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📜 Server Rules</h2>
+      <ul class="rules">
+        <li>🚫 NO Racism</li>
+        <li>🚫 NO Sexism</li>
+        <li>🚫 NO Ableism</li>
+        <li>🚫 NO Slurs</li>
+        <li>🚫 NO Criticism of Religion</li>
+        <li>🚫 NO Pornography</li>
+        <li>🔔 Do NOT ping @everyone (Only Admin & Owner)</li>
+        <li>💬 Only spam in the spam channel</li>
+        <li>👋 Introduce yourself (NOT optional)</li>
+        <li>📌 Use channels for what they are meant for</li>
+        <li>🤝 Be kind towards each other (Recommended)</li>
+        <li>👍 Give a thumbs up if you understand</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🎉 Free Boba Challenge</h2>
+      <p>🐱 Get 2000 cats in bots OR 🤬 Reach 500,000 swears</p>
+    </section>
+
+    <section>
+      <h2>🏆 Leaderboard</h2>
+      <ul class="leaderboard">
+        <li>🥇 @Pear Cat – Top Cat 🐱</li>
+        <li>🥈 @ペンギン💠 – Second Place 🐾</li>
+        <li>🥉 @Derek Chen – Third Place 🐾</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🐱 CatBot Counter</h2>
+      <p>Total Cats: <span id="cat-count">0</span></p>
+      <button onclick="addCat()">Add Cat 🐾</button>
+    </section>
+
+    <section>
+      <h2>🤖 Pear AI Assistant</h2>
+      <p>Ask Pear AI anything in the Discord server!</p>
+    </section>
+
+    <section>
+      <h2>📊 Presentation</h2>
+      <a href="https://sd41-my.sharepoint.com/:p:/g/personal/2177155_edu_burnabyschools_ca/IQDSgSGb1U1TS6yz0rE4THtGAXEHlZmKvSQrNyWtmc-FBtI?e=czDSEE" target="_blank" class="presentation-button">View Presentation</a>
+    </section>
+
+    <section>
+      <h2>🎮 Flappy Bird Game</h2>
+      <canvas id="flappyBird" width="400" height="500"></canvas>
+    </section>
+
+    <section>
+      <h2>🎮 Mario Jump Game</h2>
+      <canvas id="marioJump" width="500" height="300"></canvas>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2026 PEARCATOFFICIAL • All Rights Reserved
+  </footer>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'America/Vancouver', hour: '2-digit', minute:'2-digit', second:'2-digit' };
+      const timeString = now.toLocaleTimeString('en-US', options);
+      document.getElementById('vancouver-clock').innerText = `🕒 Vancouver Time: ${timeString}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    let catCount = 0;
+    function addCat() {
+      catCount++;
+      document.getElementById('cat-count').innerText = catCount;
+    }
+  </script>
+
+</body>
+</html>
